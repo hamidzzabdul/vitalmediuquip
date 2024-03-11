@@ -1,0 +1,122 @@
+@import "../../Styles/variables";
+
+.trending-container {
+  margin-top: 4rem;
+  .trending-wrapper {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 20px;
+    .swiper-pagination-bullets {
+      display: none;
+    }
+    .single-caraousel {
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 300ms ease;
+      position: relative;
+
+      .icons-container {
+        position: absolute;
+        top: 10px;
+        right: 40px;
+        display: flex;
+        align-items: center;
+        .wishlist-icon {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #f2f3f5;
+          transition: all 300ms ease;
+          &.active {
+            background-color: $primaryGreenColor;
+          }
+          .icon {
+            color: #000;
+            font-size: 1rem;
+            &.active {
+              color: #fff;
+            }
+          }
+          &:hover {
+            background-color: $primaryGreenColor;
+            .icon {
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      .product-wrapper {
+        background-color: #fff;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        width: 90%;
+        height: 70%;
+        .product-image {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            padding-bottom: 0.5rem;
+          }
+        }
+        .product-description {
+          padding-left: 10px;
+          padding-top: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          .category {
+            font-size: 0.675rem;
+            color: $textColor;
+            transition: all 300ms ease;
+          }
+          .name {
+            transition: all 300ms ease;
+            font-size: 0.9rem;
+            width: 90%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            text-transform: capitalize;
+            font-weight: 600;
+          }
+          .read-more-btn {
+            width: 50%;
+            border: 1px solid $primaryGreenColor;
+            background-color: #fff;
+            padding: 0.5rem;
+            color: #000;
+            cursor: pointer;
+            font-size: 0.675rem;
+          }
+        }
+      }
+
+      &:hover {
+        .category {
+          color: $primaryAccentGreenColor;
+        }
+        .name {
+          color: $primaryGreenColor;
+        }
+        .product-image {
+          .icons-container {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}

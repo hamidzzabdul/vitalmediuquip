@@ -1,0 +1,53 @@
+@import "../../Styles/variables";
+.nav-details-wrapper {
+  background-color: $primaryGreenColor;
+  width: 100%;
+  transition: transform 300ms ease-in-out;
+}
+.nav-container {
+  max-width: 1600px;
+  height: 3rem;
+  background-color: $primaryGreenColor;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  margin: 0 auto;
+
+  @media (max-width: 530px) {
+    padding: 0 0.5rem;
+  }
+
+  @media (max-width: 420px) {
+    flex-direction: column;
+    padding: 0.5rem 0;
+    height: 4rem;
+  }
+
+  .email-details {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    gap: 0.8rem;
+    p {
+      font-size: 0.875rem;
+    }
+  }
+
+  .icons {
+    font-size: 1.1rem;
+    color: #fff;
+    transition: transform 300ms ease-in-out, color 300ms ease;
+    &:hover {
+      transform: scale(1.09);
+      color: #000;
+    }
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+}

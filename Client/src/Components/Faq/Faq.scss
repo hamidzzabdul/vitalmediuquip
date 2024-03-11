@@ -1,0 +1,177 @@
+@import "../../Styles/variables";
+
+.faq-containers {
+  width: 90%;
+  margin: 50px auto;
+
+  .header {
+    width: 100%;
+    text-align: center;
+    h1 {
+      font-size: 1.6rem;
+      padding-bottom: 20px;
+    }
+    p {
+      font-size: 0.875rem;
+      color: $textColor;
+    }
+  }
+
+  .accordion {
+    margin: 0px auto;
+    padding-top: 70px;
+    padding-bottom: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+    overflow: hidden;
+
+    @media (max-width: 730px) {
+      width: 100%;
+    }
+    li {
+      border-bottom: 1px solid #bebebe;
+      height: 100%;
+      display: flex;
+      justify-content: left;
+      flex-direction: column;
+      gap: 1.3rem;
+      padding-bottom: 15px;
+      input[type="radio"] {
+        display: none;
+      }
+      label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 700;
+
+        @media (max-width: 530px) {
+          font-size: 0.975rem;
+        }
+        @media (max-width: 440px) {
+          font-size: 0.875rem;
+        }
+        @media (max-width: 390px) {
+          font-size: 0.775rem;
+        }
+        .icon {
+          padding: 0.5rem;
+          .accordion-icon {
+            font-size: 24px;
+            cursor: pointer;
+            @media (max-width: 440px) {
+              font-size: 1.3rem;
+            }
+          }
+        }
+      }
+
+      h2 {
+        font-size: 1.1rem;
+        @media screen and (max-width: 630px) {
+          font-size: 0.875rem;
+        }
+        @media screen and (max-width: 430px) {
+          font-size: 0.675rem;
+        }
+      }
+      .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 500ms ease-in-out;
+        display: flex;
+        flex-direction: column;
+        p {
+          font-weight: 400;
+          font-size: 0.75rem;
+          line-height: 26px;
+          color: $textColor;
+          @media (max-width: 630px) {
+            font-size: 0.675rem !important;
+          }
+        }
+        span {
+          font-size: 0.85rem;
+          color: $textColor;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding-left: 1rem;
+          .bullets {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: $primaryGreenColor;
+          }
+        }
+        a {
+          font-size: 0.85rem;
+          // text-decoration: underline;
+          border-bottom: 1px solid $primaryGreenColor;
+          padding: 0;
+          transition: all 300ms ease;
+          color: $textColor;
+          &:hover {
+            color: $primaryGreenColor;
+          }
+        }
+      }
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+    input[type="radio"]:checked + label + .content {
+      max-height: 400px;
+    }
+  }
+
+  .faq-des {
+    width: 100%;
+    height: 200px;
+    margin: 0px auto;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.6rem;
+    @media (max-width: 755px) {
+      width: 100%;
+    }
+
+    .subtext {
+      h3 {
+        padding-bottom: 10px;
+        font-size: 1.1rem;
+      }
+      p {
+        font-size: 0.875rem;
+      }
+      .contact-link {
+        padding: 3px;
+        transition: all 300ms ease;
+        color: $primaryGreenColor;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    @media (max-width: 755px) {
+      img {
+        width: 120px;
+      }
+      .subtext > h3 {
+        font-size: 1rem;
+      }
+      .subtext > p {
+        font-size: 0.775rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import "../../Styles/variables";
+
+.working-hours {
+  .title {
+    display: flex;
+    justify-content: top;
+    align-items: center;
+    gap: 1rem;
+    .bs-icons {
+      font-size: 1.3rem;
+    }
+  }
+
+  .hours-wrapper {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .hours {
+      display: grid;
+      gap: 0.5rem;
+      p {
+        font-size: 0.875rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: $primaryGreenColor;
+    }
+    .social {
+      display: grid;
+      gap: 0.5rem;
+      label {
+        display: flex;
+        gap: 1rem;
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $primaryGreenColor;
+          border-radius: 50%;
+          .social-icon {
+            font-size: 2rem;
+            padding: 0.5rem;
+            fill: #fff;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+@import "../../Styles/variables";
+.backdrop-side {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 18;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: opacity 0.3s ease-in-out;
+  @media (min-width: 1000px) {
+    display: none;
+  }
+}
+.sidebar {
+  width: 350px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -350px;
+  transform: translateX(350px);
+  background-color: #f2f3f5;
+  opacity: 0;
+  z-index: 20;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+  @media (max-width: 450px) {
+    width: 100%;
+  }
+  &.active {
+    right: 0;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .logo {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    .image {
+      width: 100px;
+      height: 100px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .close-icon {
+      border: 1px solid $primaryGreenColor;
+      border-radius: 5px;
+      padding: 0.4rem;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      .icon {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  .side-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    a {
+      li {
+        display: flex;
+        align-items: center;
+        padding-left: 1.5rem;
+        height: 60px;
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: all 300ms ease;
+        &:hover {
+          background-color: $primaryGreenColor;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .get-container {
+    width: 100%;
+    position: absolute;
+    bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    .socials {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      a {
+        cursor: pointer;
+        .icons {
+          // fill: $primaryGreenColor;
+          font-size: 1.3rem;
+        }
+      }
+    }
+    .get-btn {
+      width: 90%;
+      border: 1px solid $primaryGreenColor;
+      padding: 0.8rem;
+      border-radius: 20px;
+      background-color: $primaryGreenColor;
+      cursor: pointer;
+      transition: all 300ms ease-in-out, transform 300ms ease-in-out;
+      &:hover {
+        background-color: $primaryAccentGreenColor;
+        transform: translateY(-4px);
+      }
+      a {
+        font-size: 0.9rem;
+        color: #fff;
+      }
+    }
+  }
+}

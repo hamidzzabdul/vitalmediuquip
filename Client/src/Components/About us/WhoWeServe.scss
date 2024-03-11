@@ -1,0 +1,70 @@
+@import "../../Styles/variables";
+
+.clients-section {
+  width: 80%;
+  margin: 6rem auto;
+  h2 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  p {
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 0.875rem;
+    color: $textColor;
+    width: 40%;
+    margin: 0 auto;
+    line-height: 1.5rem;
+  }
+  .clients {
+    margin: 0rem auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1.8rem;
+    width: 100%;
+    padding: 1rem;
+    place-content: center;
+    & > li:nth-child(1) {
+      grid-column: 2 / 2;
+      grid-row: 3;
+    }
+
+    li {
+      font-size: 0.875rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid $primaryGreenColor;
+      padding-right: 1rem;
+      border-radius: 10px;
+      text-transform: capitalize;
+    }
+    @media (max-width: 460px) {
+      & > li:nth-child(1) {
+        grid-column: 1;
+        grid-row: auto;
+      }
+    }
+  }
+  @media (max-width: 838px) {
+    .clients {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    p {
+      width: 70%;
+    }
+  }
+  @media (max-width: 460px) {
+    .clients {
+      grid-template-columns: repeat(2, 200px) !important;
+    }
+  }
+  @media (max-width: 450px) {
+    .clients {
+      grid-template-columns: repeat(1, 300px) !important;
+    }
+  }
+}

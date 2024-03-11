@@ -1,0 +1,115 @@
+@import "../../Styles/variables";
+
+.post-container {
+  width: 100%;
+  max-height: 100%;
+  margin: 1rem auto;
+  margin-bottom: 5rem;
+  max-width: 1444px;
+  .header {
+    padding-bottom: 1rem;
+    gap: 1rem;
+    .title {
+      font-size: 1.8 rem;
+      @media screen and (max-width: 510px) {
+        font-size: 1.5rem;
+      }
+    }
+    .date-container {
+      display: flex;
+      gap: 0.5rem;
+      float: right;
+      p {
+        padding-bottom: 1rem;
+        font-size: 0.875rem;
+        color: $primaryGreenColor;
+      }
+    }
+  }
+
+  .post-content {
+    width: 70%;
+    padding: 1rem;
+    margin: 0 auto;
+    @media screen and (max-width: 700px) {
+      width: 95%;
+    }
+    @media screen and (max-width: 350px) {
+      width: 100%;
+    }
+    .cover-image {
+      height: 350px;
+      margin: 0 auto;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      @media screen and (max-width: 350px) {
+        width: 100%;
+        height: 350px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+    }
+    .content {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+      background-color: #fff;
+      position: relative;
+      margin-top: 1rem;
+      padding: 1rem;
+      // .side-menu {
+      //   width: 45px;
+      //   height: 100%;
+      //   display: flex;
+      //   flex-direction: column;
+      //   align-items: baseline;
+      //   gap: 0.8rem;
+      //   position: -webkit-sticky;
+      //   position: sticky;
+      //   bottom: 0;
+      //   .icon {
+      //     font-size: 17px;
+      //   }
+      //   .whatsapp {
+      //     color: #25d366;
+      //   }
+      //   .facebook {
+      //     color: #1877f2;
+      //   }
+      // }
+      .content-text {
+        padding-right: 0.5rem;
+        width: calc(100% - 20px);
+        h2 {
+          font-size: 1.3rem;
+          @media screen and (max-width: 400px) {
+            font-size: 1rem;
+          }
+        }
+        p {
+          font-size: 0.95rem;
+          line-height: 1.4rem;
+          img {
+            width: 350px;
+            object-fit: cover;
+            border-radius: 5px;
+            padding: 1rem 0;
+            text-align: center;
+            @media screen and (max-width: 550px) {
+              width: 100%;
+              margin: 0 auto;
+            }
+          }
+          @media screen and (max-width: 400px) {
+            font-size: 0.875rem;
+          }
+        }
+      }
+    }
+  }
+}

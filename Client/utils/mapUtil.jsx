@@ -1,0 +1,2 @@
+export const generateIdToNameMap = items => items.reduce((map, item) => ({ ...map, [item._id]: item.name }), {});
+export const generateIdToSlugMap = items => items.reduce((map, item) => ({ ...map, [item._id]: item.slug }), {});

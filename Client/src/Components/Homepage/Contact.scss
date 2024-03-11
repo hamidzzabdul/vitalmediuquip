@@ -1,0 +1,71 @@
+@import "../../Styles/variables";
+
+.contact-container {
+  max-width: 1444px;
+  margin: 0 auto;
+  height: 100%;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-content: center;
+  place-items: center;
+  gap: 1rem;
+  .contact-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    span {
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 50%;
+      border: 1px solid #dedede;
+      .contact-icon {
+        font-size: 2.4rem;
+        fill: $primaryGreenColor;
+        stroke-width: $primaryGreenColor;
+      }
+    }
+
+    .address-description {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      h3 {
+        font-size: 1rem;
+      }
+      p {
+        font-size: 0.875rem;
+        width: 200px;
+        color: $textColor;
+        line-height: 1.5rem;
+      }
+    }
+  }
+  @media (max-width: 930px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 614px) {
+    grid-template-columns: repeat(1, 1fr);
+    .contact-wrapper {
+      span {
+        padding: 0.5rem;
+
+        .contact-icon {
+          font-size: 2rem;
+        }
+      }
+      .address-description {
+        p {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}

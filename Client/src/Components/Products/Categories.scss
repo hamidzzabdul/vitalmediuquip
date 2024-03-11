@@ -1,0 +1,53 @@
+@import "../../Styles/variables";
+.categories-container {
+  width: 250px;
+  height: fit-content;
+  padding-bottom: 1rem;
+  margin: 0;
+  background-color: #fff;
+  @media (max-width: 1110px) {
+    display: none;
+  }
+  .categories-wrapper {
+    display: grid;
+    gap: 1rem;
+
+    .main-categories,
+    .industry-categories {
+      border: none;
+      padding: 0.5rem;
+      li {
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+        transition: color 300ms ease, padding 300ms ease;
+        cursor: pointer;
+        font-size: 0.875rem;
+        text-transform: capitalize;
+        &:hover {
+          color: $primaryGreenColor;
+          padding-left: 7px;
+        }
+      }
+      .active > li {
+        color: $primaryGreenColor;
+        padding-left: 7px;
+      }
+    }
+    .services {
+      display: flex;
+      align-items: center;
+      transition: color 300ms ease, padding 300ms ease;
+      cursor: pointer;
+      &:hover {
+        color: $primaryGreenColor;
+        padding-left: 7px;
+      }
+      &.active {
+        color: red;
+        color: $primaryGreenColor;
+        padding-left: 7px;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@import "../../../Styles/variables";
+
+.product-container {
+  padding: 0.5rem;
+  height: 280px;
+  cursor: pointer;
+
+  .img-container {
+    width: 100%;
+    height: 60%;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 130px;
+      height: 130px;
+      object-fit: contain;
+    }
+  }
+  .content {
+    display: grid;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    h2 {
+      font-weight: 400;
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    p {
+      font-size: 12px;
+      overflow: hidden;
+      width: 80%;
+      padding: 0.3rem 0;
+      text-transform: capitalize;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: $textColor;
+    }
+    button {
+      border: none;
+      background-color: $primaryGreenColor;
+      color: #fff;
+      padding: 0.3rem;
+      font-size: 0.775rem;
+      cursor: pointer;
+      transition: all 300ms ease;
+      &:hover {
+        background-color: $primaryAccentGreenColor;
+      }
+    }
+  }
+}

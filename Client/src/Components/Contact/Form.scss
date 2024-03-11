@@ -1,0 +1,107 @@
+@import "../../Styles/variables";
+.contact-form {
+  .form-control {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      p {
+        font-size: 0.875rem;
+        span {
+          font-size: 0.875rem;
+        }
+      }
+      .error {
+        font-size: 0.675rem;
+        color: #b00020;
+        text-transform: capitalize;
+      }
+      input {
+        width: 100%;
+        padding: 0.5rem;
+        // border-radius: 5px;
+        border: 1px solid #696974;
+        font-size: 0.75rem;
+        &::placeholder {
+          font-size: 0.75rem;
+        }
+
+        &.input-error {
+          border: 1px solid #b00020;
+        }
+        &:focus .input-error {
+          border: 1px solid #b00020;
+        }
+      }
+
+      .message {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        border: 1px solid #696974;
+      }
+    }
+
+    .btn-container {
+      display: flex;
+      //   flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      .error {
+        color: #b00020;
+      }
+      .send-email-btn {
+        background-color: $primaryGreenColor;
+        color: #fff;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 300ms ease;
+
+        &:hover {
+          background-color: $primaryAccentGreenColor;
+        }
+      }
+      .send-email-btn:disabled {
+        background-color: $primaryAccentGreenColor;
+        cursor: not-allowed;
+      }
+      p {
+        font-size: 0.75rem;
+        color: $primaryGreenColor;
+      }
+      .send-whatsapp-btn {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        border: none;
+        color: #fff;
+        background-color: $primaryGreenColor;
+        border-radius: 5px;
+        cursor: pointer;
+
+        .btn-icon {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+  @media (max-width: 835px) {
+    width: 70%;
+    // border: 1px solid black;
+    margin: 20px auto;
+  }
+  @media (max-width: 745px) {
+    margin: 20px 0;
+  }
+  @media (max-width: 570px) {
+    width: 90%;
+  }
+}

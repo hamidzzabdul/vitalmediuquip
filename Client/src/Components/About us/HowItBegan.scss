@@ -1,0 +1,77 @@
+@import "../../Styles/variables";
+
+.begining {
+  width: 80%;
+  margin: 7rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  @media (max-width: 950px) {
+    width: 100%;
+  }
+  .ceo-img {
+    width: 100%;
+    height: 370px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .begining-story {
+    width: 100%;
+    label {
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      gap: 0.5rem;
+      padding-bottom: 10px;
+      .line {
+        width: 70%;
+        height: 2px;
+        background-color: $primaryGreenColor;
+        @media (max-width: 850px) {
+          width: 50%;
+        }
+      }
+      h2 {
+        font-size: 1rem;
+      }
+    }
+    p {
+      justify-content: right;
+      font-size: 0.875rem;
+      color: $textColor;
+      line-height: 1.5rem;
+      padding-bottom: 10px;
+    }
+  }
+  @media (max-width: 675px) {
+    grid-template-columns: 1fr;
+    .ceo-img {
+      height: 350px;
+    }
+
+    .begining-story {
+      padding: 0 0.5rem;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+  @media (max-width: 500px) {
+    .begining-story {
+      width: 80%;
+      label {
+        justify-content: center;
+        .line {
+          display: none;
+        }
+      }
+      p {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

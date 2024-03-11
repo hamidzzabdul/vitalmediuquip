@@ -1,0 +1,32 @@
+@import "../../Styles/variables";
+
+.categories-wrapper {
+  display: grid;
+  gap: 1rem;
+  .close-categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .close-icon {
+      transition: all 300ms ease;
+      cursor: pointer;
+      &:hover {
+        color: $primaryGreenColor;
+      }
+    }
+  }
+
+  .main-categories,
+  .industry-categories {
+    border: 1px solid black;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    li {
+      padding: 0.3rem 0;
+    }
+    a {
+      font-size: 0.75rem;
+      text-transform: capitalize;
+    }
+  }
+}

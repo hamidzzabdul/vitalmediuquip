@@ -1,0 +1,74 @@
+@import "../../../Styles/variables";
+.blog-card {
+  width: 100%;
+  height: 350px;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    .img-container {
+      img {
+        transform: scale(1.04);
+      }
+    }
+  }
+  .img-container {
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 300ms ease-in-out;
+    }
+  }
+  .content-wrapper {
+    height: calc(330px - 70%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.5rem 0;
+    position: relative;
+    h2 {
+      width: 90%;
+      font-size: 0.885rem;
+      font-weight: 500;
+      padding: 0;
+      margin: 0;
+    }
+    p {
+      font-size: 0.7rem;
+      color: $textColor;
+      padding-top: 0.2rem;
+      line-height: 1rem;
+    }
+    .btn-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .date {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        .icon {
+          font-size: 0.875rem;
+          color: $primaryGreenColor;
+        }
+        p {
+          font-size: 0.685rem;
+        }
+      }
+      a {
+        font-size: 0.875rem;
+        color: $primaryGreenColor;
+        border-bottom: 1px solid $primaryGreenColor;
+        transition: all 300ms ease;
+        &:hover {
+          color: $primaryAccentGreenColor;
+        }
+      }
+    }
+  }
+}

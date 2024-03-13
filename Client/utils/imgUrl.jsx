@@ -1,1 +1,1 @@
-export const imgUrl = "http://127.0.0.1:3000/public/uploads/blogs/"
+export const imgUrl = "http://77.37.45.49:3000/public/uploads"

@@ -6,10 +6,14 @@ import "./AddProducts.scss"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Editor } from '@tinymce/tinymce-react';
+import SunEditor from 'suneditor-react';
+import 'suneditor/dist/css/suneditor.min.css';
 
 const AddProducts = () => {
-    const editorRef = useRef(null);
+    const editor = useRef();
+    const getSunEditorInstance = (sunEditor) => {
+        editor.current = sunEditor;
+    };
 
     const { data } = useRouteLoaderData("product-loader")
     const { subCategories, categories } = data
@@ -38,25 +42,25 @@ const AddProducts = () => {
                 </div>
                 <div className="input-container">
                     <label htmlFor="description">Description</label>
-                    <Editor
-                        apiKey={`${import.meta.env.VITE_TINY_API_KEY}`}
-                        onInit={(evt, editor) => editorRef.current = editor}
-                        initialValue=""
-                        textareaName='description'
-                        init={{
-                            height: 400,
-                            menubar: true,
-                            plugins: [
-                                'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-                                'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-                                'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+                    <SunEditor
+                        setOptions={{
+                            buttonList: [
+                                ['undo', 'redo'],
+                                ['font', 'fontSize', 'formatBlock'],
+                                ['bold', 'underline', 'italic', 'strike', 'subscript', 'superscript'],
+                                ['removeFormat'],
+                                ['outdent', 'indent'],
+                                ['align', 'horizontalRule', 'list', 'lineHeight'],
+                                ['table', 'link'],
+                                ['fullScreen', 'showBlocks', 'codeView'],
+                                ['preview', 'print'],
+                                ['fontColor', 'hiliteColor'],
                             ],
-                            toolbar: 'undo redo | blocks | ' +
-                                'bold italic forecolor | alignleft aligncenter ' +
-                                'alignright alignjustify | bullist numlist outdent indent | ' +
-                                'removeformat | help',
-                            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-                        }} />
+                        }}
+                        getSunEditorInstance={getSunEditorInstance}
+                        name='editor'
+                        height='50vh'
+                    />
                 </div>
                 <div className="input-container">
                     <label htmlFor="category">Category</label>
@@ -110,7 +114,7 @@ export const action = async ({ request }) => {
 
     const productData = new FormData();
     productData.append('name', data.get("name"));
-    productData.append('description', data.get("description"));
+    productData.append('description', data.get("editor"));
     productData.append('category', data.get("category"));
     productData.append('trending', data.get("trending"));
     productData.append('image', data.get("image"));
@@ -120,8 +124,8 @@ export const action = async ({ request }) => {
         productData.append('tags', tag);
     }
 
-    let url = `${import.meta.env.VITE_API_URL}products/create-products`;
-    // let url = "http://127.0.0.1:3000/api/v1/products/create-products";
+    // let url = `${import.meta.env.VITE_API_URL}products/create-products`;
+    let url = "http://127.0.0.1:3000/api/v1/products/create-products";
     const response = await fetch(url, {
         method: method,
         body: productData

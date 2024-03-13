@@ -70,26 +70,6 @@ const AddBlogs = () => {
 
             <div className="inputs-container">
                 <label>Content</label>
-                {/* <ReactQuill
-                    value={editorValue}
-                    onChange={(value) => setEditorValue(value)}
-                    modules={{
-                        toolbar: [
-                            [{ header: [1, 2, false] }],
-                            ['bold', 'italic', 'underline', 'blockquote'],
-                            [{ list: 'ordered' }, { list: 'bullet' }],
-                            ['image', 'code-block', 'color']
-                        ]
-                    }}
-                    formats={[
-                        'header',
-                        'bold', 'italic', 'underline', 'blockquote',
-                        'list', 'bullet',
-                        'image', 'code-block',
-                        'color' // Add 'color' format
-                    ]}
-                    theme="snow"
-                /> */}
                 <SunEditor
                     setOptions={{
                         buttonList: [

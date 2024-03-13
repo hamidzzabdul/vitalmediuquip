@@ -2,7 +2,7 @@
 import PropTypes from "prop-types"
 import { Fragment, useEffect } from "react"
 import ReactDOM from "react-dom"
-import "./Modal.scss"
+import "./modal.scss"
 
 const Backdrop = ({ onClose }) => {
     return <div className="backdrop" onClick={onClose}></div>

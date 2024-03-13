@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Sidebar from '../../Components/Admin panel/Sidebar';
+import Sidebar from '../../Components/Admin panel/SideBar';
 import Nav from '../../Components/Admin panel/Nav';
 import { Outlet } from 'react-router-dom';
 import '../../Components/Admin panel/Admin.scss';

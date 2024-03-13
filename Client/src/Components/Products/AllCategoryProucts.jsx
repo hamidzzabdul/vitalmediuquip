@@ -9,6 +9,8 @@ import { BsArrowLeftCircleFill } from "react-icons/bs"
 import { BsFillArrowRightCircleFill } from "react-icons/bs"
 import "./AllCategoryProducts.scss"
 import WishlistIcon from "../Common/WishlistIcon";
+import { imgUrl } from "../../../utils/imgUrl";
+// import { imgUrl } from "../../../utils/imgUrl";
 
 const ITEMS_PER_PAGE = 8
 
@@ -99,6 +101,7 @@ const AllCategoryProucts = () => {
     )
 }
 
+
 function ProductLink({ product, category, selectedCategory, imageUrl, allProducts }) {
     return (
         <>
@@ -110,7 +113,8 @@ function ProductLink({ product, category, selectedCategory, imageUrl, allProduct
                     to={`/allProducts/${category}/all/${product.slug}`}
                 >
                     <div className="product-image">
-                        <img src={imageUrl} alt="prouducts" />
+                        {/* <img src={`http://127.0.0.1:3000/public/uploads/products/${imageUrl}`} alt="prouducts" /> */}
+                        <img src={`${imgUrl}/products/${imageUrl}` || imageUrl} alt={product.name} />
                     </div>
                     <div className="product-detail">
                         <p className="category">{selectedCategory.name}</p>

@@ -9,7 +9,7 @@ const BlogContainer = ({ blog }) => {
     return (
         <div className="blog-card">
             <div className="img-container">
-                <img src={`${imgUrl}/${blog.coverImage}`} alt={blog.title} />
+                <img src={`${imgUrl}/blogs/${blog.coverImage}`} alt={blog.title} />
             </div>
 
             <div className="content-wrapper">

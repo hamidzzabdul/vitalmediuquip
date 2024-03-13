@@ -10,18 +10,18 @@ const Category = require("../Models/Category");
 const Subcategory = require("../Models/SubCategory");
 const Blog = require("../Models/Blog");
 
-// const multerStorage = multer.diskStorage({
-//   filename: (req, file, cb) => {
-//     cb(
-//       null,
-//       file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-//     );
-//   },
-//   destination: (req, file, cb) => {
-//     cb(null, "public/uploads");
-//   },
-// });
-const multerStorage = multer.memoryStorage();
+const multerStorage = multer.diskStorage({
+  filename: (req, file, cb) => {
+    cb(
+      null,
+      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+    );
+  },
+  destination: (req, file, cb) => {
+    cb(null, "public/uploads/products");
+  },
+});
+// const multerStorage = multer.memoryStorage();
 
 const upload = multer({
   storage: multerStorage,
@@ -40,7 +40,7 @@ exports.uploadProductImage = (req, res, next) => {
 };
 
 exports.createProduct = catchAsync(async (req, res) => {
-  const cloudinaryRes = await cloudinary.handleUpload(req.file.buffer);
+  console.log(req.file.filename);
   const productData = {
     name: req.body.name,
     description: req.body.description,
@@ -48,7 +48,7 @@ exports.createProduct = catchAsync(async (req, res) => {
     trending: req.body.trending,
     subCategory: req.body.subCategory || null,
     tags: req.body.tags,
-    productImage: cloudinaryRes.url,
+    productImage: req.file.filename,
   };
   const newDoc = await Product.create(productData);
   setTimeout(() => {

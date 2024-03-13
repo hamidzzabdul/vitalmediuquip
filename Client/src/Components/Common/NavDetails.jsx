@@ -4,7 +4,7 @@ import { FaInstagram } from "react-icons/fa6"
 import { BsLinkedin } from "react-icons/bs"
 import { AiFillTwitterCircle } from "react-icons/ai"
 
-import "./navDetails.scss"
+import "./NavDetails.scss"
 
 const NavDetails = () => {
 

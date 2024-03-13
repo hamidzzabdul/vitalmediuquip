@@ -124,8 +124,8 @@ export const action = async ({ request }) => {
         productData.append('tags', tag);
     }
 
-    // let url = `${import.meta.env.VITE_API_URL}products/create-products`;
-    let url = "http://127.0.0.1:3000/api/v1/products/create-products";
+    let url = `${import.meta.env.VITE_API_URL}products/create-products`;
+    // let url = "http://127.0.0.1:3000/api/v1/products/create-products";
     const response = await fetch(url, {
         method: method,
         body: productData

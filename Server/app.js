@@ -29,6 +29,7 @@ app.use(
       "http://127.0.0.1:3000",
       "https://vitalmediquip.co.ke",
       "https://localhost:5173",
+      "http://77.37.45.49/",
     ],
     credentials: true,
     exposedHeaders: ["Content-Range"],

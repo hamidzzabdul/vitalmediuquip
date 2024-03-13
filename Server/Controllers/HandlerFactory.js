@@ -1,6 +1,8 @@
 const catchAsync = require("./../utils/CatchAsync");
 const APIFeatures = require("./../utils/ApiFeatures");
 const cloudinary = require("../utils/cloudinary");
+const fs = require("fs");
+
 exports.deleteOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const doc = await Model.findById(req.params.id);
@@ -11,9 +13,13 @@ exports.deleteOne = (Model) =>
         message: "No doc found with that id",
       });
     }
-    const imageUrl = doc.productImage;
-
     // Then, delete the document from the database
+    const imagePath = `public/uploads/products/${doc.productImage}`;
+    fs.unlink(imagePath, (err) => {
+      if (err) {
+        console.error("Error deleting image:", err);
+      }
+    });
     await Model.findByIdAndDelete(doc._id);
 
     res.status(204).json({
@@ -40,21 +46,16 @@ exports.deleteAll = (Model) =>
 
 exports.updateOne = (Model) =>
   catchAsync(async (req, res, next) => {
-    if (req.file) {
-      const cloudinaryRes = await cloudinary.handleUpload(req.file.buffer);
-    }
     const productData = {
       name: req.body.name,
       description: req.body.description,
       category: req.body.category,
       subCategory: req.body.subCategory || null,
       tags: req.body.tags,
+      productImage: req.file.filename,
       trending: req.body.trending,
     };
     // Check if a file was uploaded
-    if (req.file) {
-      productData.productImage = cloudinaryRes.url || "";
-    }
     const doc = await Model.findByIdAndUpdate(req.params.id, productData, {
       new: true,
       runValidators: true,

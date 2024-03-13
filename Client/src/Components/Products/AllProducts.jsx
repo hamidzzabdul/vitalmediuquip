@@ -11,6 +11,7 @@ import { useSearch } from "../../Hooks/UseSearch";
 
 import "./AllProducts.scss"
 import WishlistIcon from "../Common/WishlistIcon";
+import { imgUrl } from "../../../utils/imgUrl";
 
 
 const ITEMS_PER_PAGE = 16
@@ -90,7 +91,7 @@ const AllProducts = () => {
                                         }
                                     >
                                         <div className="product-image">
-                                            <img src={product.productImage} alt="microscope" crossOrigin="anonymous" />
+                                            <img src={`${imgUrl}products/${product.productImage}`} alt={product.name} />
                                         </div>
                                         <div className="product-detail">
                                             <p className="category">{categoryName}</p>

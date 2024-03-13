@@ -59,11 +59,11 @@ const FirstSlider = ({ title, name, image, description, btnName }) => {
 };
 
 FirstSlider.propTypes = {
-    title: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    btnName: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    name: PropTypes.string,
+    image: PropTypes.string,
+    description: PropTypes.string,
+    btnName: PropTypes.string,
 };
 
 export default FirstSlider

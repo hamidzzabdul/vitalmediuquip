@@ -40,7 +40,6 @@ exports.uploadProductImage = (req, res, next) => {
 };
 
 exports.createProduct = catchAsync(async (req, res) => {
-  console.log(req.file.filename);
   const productData = {
     name: req.body.name,
     description: req.body.description,

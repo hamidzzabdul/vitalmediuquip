@@ -1,12 +1,13 @@
 // import WishlistIcon from "../../Common/WishlistIcon"
 import PropTypes from "prop-types";
 import "./Product.scss"
+import { imgUrl } from "../../../../utils/imgUrl";
 const Product = ({ image, name, subCategory }) => {
     return (
         <div className="product-container">
             {/* <WishlistIcon /> */}
             <div className="img-container">
-                <img src={image} alt={name} />
+                <img src={`${imgUrl}products/${image}`} alt={name} />
             </div>
 
             <div className="content">

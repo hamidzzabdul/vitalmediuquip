@@ -56,7 +56,7 @@ const Lab = ({ products, subCategories, categories }) => {
                         slidesPerView: 2,
                     },
                     300: {
-                        slidesPerView: 1
+                        slidesPerView: 2
                     }
                 }}
             >

@@ -18,8 +18,8 @@ const Blogs = ({ blogs }) => {
             </div>
             <div className="blog-wrapper">
                 {firstThreeBlogs.map(blog => (
-                    <div key={blog.id}>
-                        <BlogContainer blog={blog} />
+                    <div key={blog._id}>
+                        <BlogContainer blog={blog} key={blog.Id} />
                     </div>
                 ))}
             </div>

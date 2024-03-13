@@ -23,7 +23,7 @@ const SinglePostPage = () => {
                     </div>
                 </div>
                 <div className="cover-image">
-                    <img src={`${imgUrl}/${blog[0].coverImage}`} alt="" />
+                    <img src={`${imgUrl}/blogs/${blog[0].coverImage}`} alt="" />
                 </div>
 
                 <div className="content">

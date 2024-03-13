@@ -122,7 +122,8 @@ export const action = async ({ request, params }) => {
     console.log(data.get("trending"))
 
     const productId = params.id
-    let url = `${import.meta.env.VITE_API_URL}products/${productId}`;
+    // let url = `${import.meta.env.VITE_API_URL}products/${productId}`;
+    let url = `http://127.0.0.1:3000/api/v1/products/${productId}`;
 
     try {
         const response = await fetch(url, {

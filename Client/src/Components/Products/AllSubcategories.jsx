@@ -1,4 +1,4 @@
-import "./AllsubCategories.scss"
+import "./AllSubCategories.scss"
 import Sub1 from "../../assets/categories/subcategories/equipments.jpg"
 import { NavLink, useParams, useRouteLoaderData } from "react-router-dom";
 

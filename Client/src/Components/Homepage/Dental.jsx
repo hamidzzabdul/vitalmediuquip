@@ -18,7 +18,7 @@ import useWishlist from "../../Hooks/useWishList";
 
 const text = "Add to wishList";
 
-const Dirui = ({ products, subCategories, categories }) => {
+const Dental = ({ products, subCategories, categories }) => {
     const { favouriteStatus } = useWishlist()
     const categoryMap = generateIdToNameMap(categories)
     const subCatgegoryMap = generateIdToNameMap(subCategories);
@@ -27,13 +27,12 @@ const Dirui = ({ products, subCategories, categories }) => {
 
 
     const diruiProducts = products.filter(product => {
-        // return product.category === "65dda869c288cdb6a93ef34d"
-        return product.category === "64f09453672287d7ce181be5"
+        return product.category === "64f09469672287d7ce181beb"
     })
     return (
         <div className="products-wrapper">
             <div className="category-header">
-                <h2 className="title">Dirui</h2>
+                <h2 className="title">Dental</h2>
                 <div className="line" />
             </div>
             <Swiper
@@ -72,7 +71,7 @@ const Dirui = ({ products, subCategories, categories }) => {
                                 ? `/allProducts/${categorySlugs[product.category]}/all/${product.slug}`
                                 : `/allProducts/${categorySlugs[product.category]}/${subCategorySlugs[product.subCategory]}/${product.slug}`
                         } onClick={scrolltoTopHandler}>
-                            <Product image={product.productImage} name={product.name} subCategory={"Dirui"} />
+                            <Product image={product.productImage} name={product.name} subCategory={"Dental"} />
                         </NavLink>
                     </SwiperSlide>)
                 })}
@@ -82,10 +81,10 @@ const Dirui = ({ products, subCategories, categories }) => {
     );
 };
 
-Dirui.propTypes = {
+Dental.propTypes = {
     products: PropTypes.array,
     subCategories: PropTypes.array,
     categories: PropTypes.array
 };
 
-export default Dirui
+export default Dental

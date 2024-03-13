@@ -104,6 +104,9 @@ section {
           &.other-sliders {
             margin-left: 5rem;
             width: 50%;
+            @media screen and (max-width: 650px) {
+              margin: 0;
+            }
           }
 
           .title {
@@ -119,6 +122,9 @@ section {
               color: #e50060;
               font-size: 3.5rem;
               font-family: "Lobster", sans-serif;
+              @media screen and (max-width: 650px) {
+                font-size: 2rem;
+              }
             }
           }
           .product-name {
@@ -128,6 +134,9 @@ section {
             &.other-sliders {
               font-size: 1.8rem;
               width: 100%;
+              @media screen and (max-width: 650px) {
+                font-size: 1.1rem;
+              }
             }
           }
           .additional-text {
@@ -217,6 +226,15 @@ section {
 
         &.second-sliders {
           height: 500px;
+          @media screen and (max-width: 650px) {
+            height: 250px;
+          }
+          @media screen and (max-width: 500px) {
+            width: 100%;
+            img {
+              scale: 1.07;
+            }
+          }
         }
         img {
           width: 100%;
@@ -226,11 +244,11 @@ section {
 
         @media screen and (max-width: 670px) {
           height: 230px;
-          width: 100%;
+          // width: 100%;
           display: flex;
           justify-content: center;
           padding-left: 0;
-          img {
+          \ img {
             width: 100%;
             object-fit: contain;
           }

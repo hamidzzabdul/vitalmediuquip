@@ -81,4 +81,25 @@ exports.updateBlog = CatchAsync(async (req, res, next) => {
 });
 
 exports.getAllBlogs = factory.getAll(Blog);
-exports.deleteBlog = factory.deleteOne(Blog);
+exports.deleteBlog = CatchAsync(async (req, res, next) => {
+  const doc = await Model.findById(req.params.id);
+  if (!doc) {
+    return res.status(404).json({
+      status: "fail",
+      message: "No doc found with that id",
+    });
+  }
+  // Then, delete the document from the database
+  const imagePath = `public/uploads/blogs/${doc.coverImage}`;
+  fs.unlink(imagePath, (err) => {
+    if (err) {
+      console.error("Error deleting image:", err);
+    }
+  });
+  await Model.findByIdAndDelete(doc._id);
+
+  res.status(204).json({
+    status: "success",
+    data: null,
+  });
+});

@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import "./Edit.scss"
 import { FaSearch } from "react-icons/fa";
 import parser from "html-react-parser"
+import { imgUrl } from "../../../../utils/imgUrl";
 
 const EditProducts = () => {
     const { data } = useRouteLoaderData("product-loader")
@@ -41,7 +42,7 @@ const EditProducts = () => {
                 return (
                     <div className="product-container" key={product._id}>
                         <div className="product-details">
-                            <img src={product.productImage} alt="product image" />
+                            <img src={`${imgUrl}products/${product.productImage}`} alt={product.name} />
                             <div className="product-info">
                                 <p>{product.name}</p>
                                 <p>{parser(product.description)}</p>

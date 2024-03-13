@@ -9,6 +9,7 @@ import General from '../Components/Homepage/General'
 import Dirui from '../Components/Homepage/Dirui'
 import Blogs from '../Components/Homepage/Blogs'
 import Progress from '../Components/Homepage/Progress'
+import Dental from '../Components/Homepage/Dental'
 
 const HomePage = () => {
     const { data: blogs } = useRouteLoaderData("blogs-loader")
@@ -21,6 +22,7 @@ const HomePage = () => {
             <Dirui products={products} subCategories={subCategories} categories={categories} />
             <Lab products={products} subCategories={subCategories} categories={categories} />
             <General products={products} subCategories={subCategories} categories={categories} />
+            <Dental products={products} subCategories={subCategories} categories={categories} />
             <Partners />
             <Blogs blogs={blogs} />
             <Faq />

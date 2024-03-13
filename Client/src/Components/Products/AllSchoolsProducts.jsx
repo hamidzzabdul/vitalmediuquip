@@ -10,6 +10,7 @@ import { useState } from "react";
 import "./AllSubCategoryProducts.scss"
 import SearchAndFilter from "../Common/SearchAndFilter";
 import WishlistIcon from "../Common/WishlistIcon";
+import { imgUrl } from "../../../utils/imgUrl";
 
 const ITEMS_PER_PAGE = 8
 
@@ -82,7 +83,7 @@ const AllSchoolsProducts = () => {
                                         rel="noopener noreferrer"
                                     >
                                         <div className="product-image">
-                                            <img src={obj.productImage} alt="microscope" crossOrigin='anonymous' />
+                                            <img src={`${imgUrl}products/${obj.productImage}`} alt={obj.name} />
                                         </div>
                                         <div className="product-details">
                                             <p className="category">{categoryName}</p>

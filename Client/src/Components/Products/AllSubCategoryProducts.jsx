@@ -11,6 +11,7 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs"
 import "./AllSubCategoryProducts.scss"
 import SearchAndFilter from "../Common/SearchAndFilter";
 import WishlistIcon from "../Common/WishlistIcon";
+import { imgUrl } from "../../../utils/imgUrl";
 
 const ITEMS_PER_PAGE = 8
 
@@ -109,7 +110,7 @@ function ProductLink({ product, selectedCategory, selectedSubCategory, allProduc
                 to={`/allProducts/${selectedCategory.slug}/${selectedSubCategory.slug}/${product.slug}`}
             >
                 <div className="product-image">
-                    <img src={product.productImage} alt="microscope" crossOrigin='anonymous' />
+                    <img src={`${imgUrl}products/${product.productImage}`} alt={product.name} />
                 </div>
                 <div className="product-details">
                     <p className="category">{selectedCategory.name}</p>

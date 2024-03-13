@@ -115,6 +115,7 @@ function ProductLink({ product, category, selectedCategory, imageUrl, allProduct
                     <div className="product-image">
                         {/* <img src={`http://127.0.0.1:3000/public/uploads/products/${imageUrl}`} alt="prouducts" /> */}
                         <img src={`${imgUrl}/products/${imageUrl}` || imageUrl} alt={product.name} />
+
                     </div>
                     <div className="product-detail">
                         <p className="category">{selectedCategory.name}</p>

@@ -31,7 +31,7 @@ const AddBlogs = () => {
         formData.append('content', editorValue);
         formData.append('description', description);
         try {
-            const response = await axios.post(`${import.meta.env.VITE_API_URL}`, formData);
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}blogs/create-blog`, formData);
 
             // const response = await axios.post('http://127.0.0.1:3000/api/v1/blogs/create-blog', formData);
 

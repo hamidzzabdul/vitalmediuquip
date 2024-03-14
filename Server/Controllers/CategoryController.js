@@ -20,9 +20,9 @@ exports.getAllCategorySubCategory = catchAsync(async (req, res) => {
   const alldocs = await Subcategory.find({ category: categoryId });
   res.status(200).json({
     status: "success",
-    result: alldocs.length,
+    result: docs.length,
     data: {
-      alldocs,
+      docs,
     },
   });
 });

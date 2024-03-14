@@ -8,7 +8,7 @@ export const EnquireProvider = ({ children }) => {
     const [selectedProduct, setSelectedProduct] = useState(null);
 
     const openEnquireModal = () => {
-        setShowEnquire(true); // Open the enquire modal
+        setShowEnquire(!showEnquire); // Open the enquire modal
     };
     const openCategoriesModal = () => {
         setShowCategories(true)

@@ -13,6 +13,7 @@ import { useParams, useRouteLoaderData } from "react-router-dom";
 import { useContext } from "react"
 import parse from 'html-react-parser';
 import WishlistIcon from "../../Common/WishlistIcon"
+import { imgUrl } from "../../../../utils/imgUrl"
 
 const ProductDetails = () => {
     const { selectProduct } = useContext(EnquireContext);
@@ -41,7 +42,7 @@ const ProductDetails = () => {
                 <div className="product">
                     <WishlistIcon product={currentProduct} allProducts={allproducts} categoryName={category} />
                     <div className="product-image">
-                        <img src={productImage} alt="product" />
+                        <img src={`${imgUrl}products/${productImage}`} alt={product.name} />
                     </div>
                     <div className="product-description">
                         <h1 className="product-name">{productName}</h1>

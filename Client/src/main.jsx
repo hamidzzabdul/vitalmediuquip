@@ -7,11 +7,14 @@ import "./Styles/_global.scss"
 import './Styles/_typography.scss'
 import store from './store/index.jsx'
 import { AuthProvider } from './store/AuthContext.jsx'
+import EnquireProvider from './store/EnquireContextProvider.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <AuthProvider>
-      <App />
+      <EnquireProvider>
+        <App />
+      </EnquireProvider>
     </AuthProvider>
   </Provider>
 )

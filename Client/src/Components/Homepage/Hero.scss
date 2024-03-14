@@ -154,15 +154,21 @@ section {
               width: fit-content;
               border: none;
               background-color: $primaryGreenColor;
-              color: #fff;
               transition: transform 300ms ease;
+              padding: 0.7rem;
+              border-radius: 5px;
+              cursor: pointer;
+              a {
+                color: #fff;
+                font-size: 0.9rem;
+              }
 
               &:hover {
                 background-color: $primaryAccentGreenColor;
                 transform: translateY(-4px);
               }
             }
-            a {
+            .all-products-btn {
               width: 150px;
               padding: 0.7rem;
               border: 2px solid #000;

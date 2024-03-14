@@ -2,6 +2,8 @@ import { NavLink } from 'react-router-dom'
 import PropTypes from "prop-types";
 import { motion } from "framer-motion"
 import { ImageFadeInAnimationVariant } from '../../../utils/animations';
+import { useContext } from 'react';
+import EnquireContext from '../../store/EnquireContext';
 
 
 const item = {
@@ -18,6 +20,8 @@ const item = {
 
 
 const SecondSliders = ({ title, name, image, description, btnName }) => {
+    const { openEnquireModal, } = useContext(EnquireContext);
+
     return (
         <div className="slide-container">
             <motion.div
@@ -39,8 +43,13 @@ const SecondSliders = ({ title, name, image, description, btnName }) => {
                 </motion.p>
                 <motion.p className="additional-text">{description}</motion.p>
                 <div className="button-container">
-                    <NavLink className="get-quote-btn">{btnName}</NavLink>
-                    <NavLink className="all-products-btn">Get Quotation</NavLink>
+                    <button className="get-quote-btn" >
+                        <NavLink>
+                            {btnName}
+                        </NavLink>
+                    </button>
+                    <button className="all-products-btn" onClick={openEnquireModal}>Get Quotation</button>
+
                 </div>
             </motion.div>
             <motion.div

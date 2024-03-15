@@ -18,7 +18,7 @@ const multerStorage = multer.diskStorage({
     );
   },
   destination: (req, file, cb) => {
-    cb(null, "../public/uploads/products");
+    cb(null, "/public/uploads/products");
   },
 });
 // const multerStorage = multer.memoryStorage();
